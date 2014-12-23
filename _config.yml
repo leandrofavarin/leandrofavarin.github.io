@@ -1,0 +1,17 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        '/blog/:title/'
+base:              http://lfavarin.github.io
+relative_permalinks: true
+
+# Setup
+title:            'Leandro Favarin'
+tagline:          'Mobile devices software engineer'
+url:              http://lfavarin.github.io
+baseurl:          /
+
+author_name:      'Leandro Favarin'
+author_email:     lfavarin@gmail.com
