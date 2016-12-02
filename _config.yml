@@ -5,7 +5,6 @@ highlighter:      pygments
 # Permalinks
 permalink:        '/blog/:title/'
 base:              http://lfavarin.github.io
-relative_permalinks: true
 
 # Setup
 title:            'Leandro Favarin'
