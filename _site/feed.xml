@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leandro Favarin - Articles</title>
+    <description>Technology, creativity, photography, philosophy, music and whatever does not fit in 140 characters.</description>
+    <link>
+    http://leandrofavarin.com/</link>
+    
+      
+      <item>
+        <title>Exponential-Backoff RxJava operator with Jitter</title>
+        
+          <description>&lt;p&gt;After reading &lt;a href=&quot;https://stripe.com/blog/idempotency&quot;&gt;this article&lt;/a&gt; about how Stripe handle errors between the clients and the server, I decided to write one in Java using RxJava 2.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 11 Mar 2017 11:30:00 +0100</pubDate>
+        <link>
+        http://leandrofavarin.com//exponential-backoff-rxjava-operator-with-jitter</link>
+        <guid isPermaLink="true">http://leandrofavarin.com//exponential-backoff-rxjava-operator-with-jitter</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

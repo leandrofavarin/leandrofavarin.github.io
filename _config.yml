@@ -1,16 +1,36 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
+# Jykell configuration
+#markdown: redcarpet
+#highlighter: pygments
+markdown: kramdown
+highlighter: rouge
+paginate: 5
+language: 'en-us'
+
+# Website info
+name: 'Leandro Favarin'
+description: "Technology, creativity, photography, philosophy, music and whatever does not fit in 140 characters."
+
+# Author's info
+author: 'Leandro Favarin'
+# edit 'categories' in the front matter of every post to match this username
+nickname: leandrofavarin
+bio: 'Leandro has been working as a software engineer for mobile devices and portable technology. His focus is on the Android platform and everything around it.'
+location: 'Berlin, Germany'
+url: 'http://leandrofavarin.com/'
+image: 'assets/images/leandro.jpg'
+
+short_url: 'leandrofavarin.com'
+google_analytics: UA-58186094-1
+disqus: leandrofavarin
+# edit baseurl to simply '/' if using as your personal page (instead of a project page)
+baseurl: /
 
 # Permalinks
-permalink:        '/blog/:title/'
-base:              http://lfavarin.github.io
+permalink: /:title
+# permalink: /author/:username
+# permalink: /tag/:tag
 
-# Setup
-title:            'Leandro Favarin'
-tagline:          'Mobile devices software engineer'
-url:              http://lfavarin.github.io
-baseurl:          /
 
-author_name:      'Leandro Favarin'
-author_email:     lfavarin@gmail.com
+# gems and other configs
+gems: [jekyll-paginate, jekyll-gist]
+exclude: [vendor]
