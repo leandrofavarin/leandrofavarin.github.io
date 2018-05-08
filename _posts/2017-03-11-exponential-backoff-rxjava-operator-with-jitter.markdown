@@ -24,18 +24,71 @@ Network failures are everywhere and can happen at any time, and if you have seve
 
 Since I couldn’t find any flexible yet powerful solution for this problem written in Java I decided to write my own using [RxJava 2](https://github.com/ReactiveX/RxJava). The operator is:
 
-{% gist leandrofavarin/2ec45769c2383c371a63aab0e91099b0 ExpBackoff.java %}
+{% highlight java %}
+/**
+ * Exponential backoff that respects the equation: delay * retries ^ 2 * jitter
+ *
+ * @param retries The max number of retries or -1 to for MAX_INT times.
+ */
+class ExpBackoff(
+  private val jitter: Jitter,
+  private val delay: Long,
+  private val units: TimeUnit,
+  retries: Int
+) : Function<Observable<out Throwable>, Observable<Long>> {
+  private val retries: Int = if (retries > 0) retries else Integer.MAX_VALUE
+
+  @Throws(Exception::class)
+  override fun apply(@NonNull observable: Observable<out Throwable>): Observable<Long> {
+    return observable.zipWith(
+          Observable.range(1, retries),
+          BiFunction<Throwable, Int, Int> { _, retryCount -> retryCount }
+        )
+        .flatMap { attemptNumber -> Observable.timer(getNewInterval(attemptNumber), units) }
+  }
+
+  private fun getNewInterval(retryCount: Int): Long {
+    var newInterval = (delay * Math.pow(retryCount.toDouble(), 2.0) * jitter.get()) as Long
+    if (newInterval < 0) {
+      newInterval = java.lang.Long.MAX_VALUE
+    }
+    return newInterval
+  }
+}
+{% endhighlight %}
 
 With `Jitter` being:
 
-{% gist leandrofavarin/2ec45769c2383c371a63aab0e91099b0 Jitter.java %}
+{% highlight java %}
+interface Jitter {
+  fun get(): Double
+
+  companion object {
+    val NO_OP = { 1 }
+  }
+}
+{% endhighlight %}
 
 A default implementation that could deviate up to 15% could be written as:
 
-{% gist leandrofavarin/2ec45769c2383c371a63aab0e91099b0 DefaultJitter.java %}
+{% highlight java %}
+import java.util.Random
+
+class DefaultJitter : Jitter {
+  private val random = Random()
+
+  /** Returns a random value inside [0.85, 1.15] every time it's called  */
+  fun get(): Double = 0.85 + random.nextDouble() % 0.3f
+}
+{% endhighlight %}
 
 The implementation here is not 1:1 to what Stripe did, but it could be changed easily to adapt to your needs.
 
 Its usage is then very simple. Just apply it before subscribing:
 
-{% gist leandrofavarin/2ec45769c2383c371a63aab0e91099b0 USAGE.md %}
+{% highlight java %}
+observable
+  ...
+  .retryWhen(ExpBackoff(DefaultJitter(), delay = 1, SECONDS, retries = 3))
+  .subscribe(/* */)
+{% endhighlight %}
