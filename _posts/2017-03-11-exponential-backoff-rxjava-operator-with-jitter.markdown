@@ -1,13 +1,8 @@
 ---
 layout: post
-cover: 'assets/images/exponential-backoff-cover.jpg'
 title: Exponential-Backoff RxJava operator with Jitter
 date: 2017-03-11 10:30:00
-tags: java reactive programming
-subclass: 'post'
-categories: 'leandrofavarin'
-navigation: True
-logo: 'assets/images/ghost.png'
+tags: [java, kotlin, rxjava, reactive programming]
 ---
 
 Stripe recently published a technical [article](https://stripe.com/blog/idempotency) about how they handle errors between the clients and the server. The whole post is worth a read, and one of the topics mentioned was “Being a good distributed citizen”, in which mobile clients play fair when receiving failures from network operations. From their article (emphasis mine):
@@ -22,35 +17,32 @@ Stripe recently published a technical [article](https://stripe.com/blog/idempote
 
 Network failures are everywhere and can happen at any time, and if you have several clients failing at the same time, it is a BIG deal.
 
-Since I couldn’t find any flexible yet powerful solution for this problem written in Java I decided to write my own using [RxJava 2](https://github.com/ReactiveX/RxJava). The operator is:
+Since I couldn’t find any flexible yet powerful solution for this problem written in Kotlin I decided to write my own using [RxJava 2](https://github.com/ReactiveX/RxJava). The operator is:
 
-{% highlight java %}
+{% highlight kotlin %}
 /**
  * Exponential backoff that respects the equation: delay * retries ^ 2 * jitter
- *
- * @param retries The max number of retries or -1 to for MAX_INT times.
  */
 class ExpBackoff(
   private val jitter: Jitter,
   private val delay: Long,
-  private val units: TimeUnit,
-  retries: Int
+  private val unit: TimeUnit,
+  private val retries: Int = 0
 ) : Function<Observable<out Throwable>, Observable<Long>> {
-  private val retries: Int = if (retries > 0) retries else Integer.MAX_VALUE
 
   @Throws(Exception::class)
-  override fun apply(@NonNull observable: Observable<out Throwable>): Observable<Long> {
-    return observable.zipWith(
-          Observable.range(1, retries),
-          BiFunction<Throwable, Int, Int> { _, retryCount -> retryCount }
-        )
-        .flatMap { attemptNumber -> Observable.timer(getNewInterval(attemptNumber), units) }
+  override fun apply(observable: Observable<out Throwable>): Observable<Long> {
+    return observable
+        .zipWith(Observable.range(1, retries), BiFunction<Throwable, Int, Int> { _, retryCount ->
+          retryCount
+        })
+        .flatMap { attemptNumber -> Observable.timer(getNewInterval(attemptNumber), unit) }
   }
 
   private fun getNewInterval(retryCount: Int): Long {
-    var newInterval = (delay * Math.pow(retryCount.toDouble(), 2.0) * jitter.get()) as Long
+    var newInterval = (delay * Math.pow(retryCount.toDouble(), 2.0) * jitter.get()).toLong()
     if (newInterval < 0) {
-      newInterval = java.lang.Long.MAX_VALUE
+      newInterval = Long.MAX_VALUE
     }
     return newInterval
   }
@@ -59,7 +51,7 @@ class ExpBackoff(
 
 With `Jitter` being:
 
-{% highlight java %}
+{% highlight kotlin %}
 interface Jitter {
   fun get(): Double
 
@@ -71,14 +63,12 @@ interface Jitter {
 
 A default implementation that could deviate up to 15% could be written as:
 
-{% highlight java %}
-import java.util.Random
-
+{% highlight kotlin %}
 class DefaultJitter : Jitter {
   private val random = Random()
 
   /** Returns a random value inside [0.85, 1.15] every time it's called  */
-  fun get(): Double = 0.85 + random.nextDouble() % 0.3f
+  override fun get(): Double = 0.85 + random.nextDouble() % 0.3f
 }
 {% endhighlight %}
 
@@ -86,9 +76,9 @@ The implementation here is not 1:1 to what Stripe did, but it could be changed e
 
 Its usage is then very simple. Just apply it before subscribing:
 
-{% highlight java %}
+{% highlight kotlin %}
 observable
   ...
-  .retryWhen(ExpBackoff(DefaultJitter(), delay = 1, SECONDS, retries = 3))
+  .retryWhen(ExpBackoff(DefaultJitter(), delay = 1, unit = SECONDS, retries = 3))
   .subscribe(/* */)
 {% endhighlight %}

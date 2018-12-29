@@ -1,30 +1,44 @@
-    <link rel="canonical" href="{{ site.baseurl }}" />
-    <meta name="referrer" content="origin" />
-    <link rel="next" href="{{ site.baseurl }}page2/" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ site.description }}">
 
-    <meta property="og:site_name" content="{{ site.name }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ site.name }}" />
-    <meta property="og:description" content="{{ site.description }}" />
-    <meta property="og:url" content="{{ site.baseurl }}" />
-    <meta property="og:image" content="{{ site.baseurl }}assets/images/cover1.jpg" />
+  <meta name="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@leandrofavarin">
+  <meta name="twitter:domain" content="leandrofavarin.com">
+  <meta name="twitter:title" content="Presentation: {{ page.title }}">
+  {% if page.youtube %}
+  <meta name="twitter:description" content="{{ content | strip_html | escape_once }}">
+  <meta name="twitter:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
+  {% elsif page.speakerdeck %}
+  <meta name="twitter:description" content="{{ content | strip_html | escape_once }}">
+  <meta name="twitter:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
+  {% else %}
+  <meta name="twitter:description" content="Blog posts, presentations, GitHub, and more.">
+  <meta name="twitter:image" content="http://gravatar.com/avatar/fe32de590ba76907182df4e2a211e086?s=245">
+  {% endif %}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:label1" content="Event">
+  <meta name="twitter:data1" content="{{ page.event }} ({{ page.location }})">
+  <meta name="twitter:label2" content="Date">
+  <meta name="twitter:data2" content="{{ page.date | date:"%d %B %Y" }}">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ site.name }}" />
-    <meta name="twitter:description" content="{{ site.description }}" />
-    <meta name="twitter:url" content="{{ site.baseurl }}" />
-    <meta name="twitter:image:src" content="{{ site.baseurl }}assets/images/cover1.jpg" />
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
 
-    <script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Website",
-    "publisher": "Leandro Favarin",
-    "url": "{{ site.baseurl }}",
-    "image": "{{ site.baseurl }}assets/images/cover1.jpg",
-    "description": "{{ site.description }}"
-}
-    </script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
 
-    <meta name="generator" content="Jekyll 3.0.0" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.baseurl }}feed.xml" />
+  <!-- Favicon -->
+  <link rel="mask-icon" href="{{ "/assets/favicon.svg" | relative_url }}" color="#423d3d">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon.ico" | relative_url }}">
+  <link rel="apple-touch-icon" sizes="160x160" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
+</head>

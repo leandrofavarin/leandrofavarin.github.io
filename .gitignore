@@ -9,6 +9,7 @@ _site
 .DS_Store
 bbin/
 gh-pages/
+vendor/
 site/_site/
 coverage
 .ruby-version

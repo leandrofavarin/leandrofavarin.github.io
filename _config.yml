@@ -1,36 +1,35 @@
-# Jykell configuration
-#markdown: redcarpet
-#highlighter: pygments
+# Site settings
+title: Leandro Favarin
+url: "https://leandrofavarin.com"
+description: Programming, technology, creativity, photography, philosophy, music and more.
+
+# Author
+author:
+  name: Leandro Favarin
+  url: https://leandrofavarin.com
+  email: lfavarin@gmail.com
+  location: Berlin, Germany
+
+# Build settings
 markdown: kramdown
-highlighter: rouge
-paginate: 5
-language: 'en-us'
 
-# Website info
-name: 'Leandro Favarin'
-description: "Technology, creativity, photography, philosophy, music and whatever does not fit in 140 characters."
+# Assets
+sass:
+  sass_dir: _sass
+  style: compressed
 
-# Author's info
-author: 'Leandro Favarin'
-# edit 'categories' in the front matter of every post to match this username
-nickname: leandrofavarin
-bio: 'Leandro has been working as a software engineer for mobile devices and portable technology. His focus is on the Android platform and everything around it.'
-location: 'Berlin, Germany'
-url: 'http://leandrofavarin.com/'
-image: 'assets/images/leandro.jpg'
-
-short_url: 'leandrofavarin.com'
-google_analytics: UA-58186094-1
-disqus: leandrofavarin
-# edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /
+# Gems
+plugins:
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
 permalink: /:title
-# permalink: /author/:username
-# permalink: /tag/:tag
+paginate: 15
 
+collections:
+  presentations:
+    output: true
+    permalink: /:title/
 
-# gems and other configs
-gems: [jekyll-paginate, jekyll-gist]
 exclude: [vendor]
