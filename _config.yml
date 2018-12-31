@@ -1,7 +1,14 @@
 # Site settings
-title: Leandro Favarin
-url: "https://leandrofavarin.com"
-description: Programming, technology, creativity, photography, philosophy, music and more.
+title:          Leandro Favarin
+description:    "Programming, technology, creativity, photography, philosophy, music and more"
+url:            "https://leandrofavarin.com"
+# baseurl:        "/"
+
+twitter:
+  username: "leandrofavarin"
+
+# Google Analytics
+google_analytics: UA—58186094-1
 
 # Author
 author:
@@ -12,6 +19,8 @@ author:
 
 # Build settings
 markdown: kramdown
+include:
+  - _pages
 
 # Assets
 sass:
@@ -20,16 +29,14 @@ sass:
 
 # Gems
 plugins:
+  - jekyll-feed
   - jekyll-paginate
-  # - jemoji #Uncomment this to allow emoji in your post
+  - jekyll-seo-tag
+  - jemoji
 
 # Permalinks
 permalink: /:title
 paginate: 15
 
-collections:
-  presentations:
-    output: true
-    permalink: /:title/
-
-exclude: [vendor]
+# Excludes
+exclude: [ vendor, Gemfile, Gemfile.lock, tale.gemspec ]

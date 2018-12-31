@@ -1,37 +1,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ site.description }}">
 
-  <meta name="og:type" content="website">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@leandrofavarin">
-  <meta name="twitter:domain" content="leandrofavarin.com">
-  <meta name="twitter:title" content="Presentation: {{ page.title }}">
-  {% if page.youtube %}
-  <meta name="twitter:description" content="{{ content | strip_html | escape_once }}">
-  <meta name="twitter:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
-  {% elsif page.speakerdeck %}
-  <meta name="twitter:description" content="{{ content | strip_html | escape_once }}">
-  <meta name="twitter:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
-  {% else %}
-  <meta name="twitter:description" content="Blog posts, presentations, GitHub, and more.">
-  <meta name="twitter:image" content="http://gravatar.com/avatar/fe32de590ba76907182df4e2a211e086?s=245">
-  {% endif %}
-  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-  <meta name="twitter:label1" content="Event">
-  <meta name="twitter:data1" content="{{ page.event }} ({{ page.location }})">
-  <meta name="twitter:label2" content="Date">
-  <meta name="twitter:data2" content="{{ page.date | date:"%d %B %Y" }}">
-
-  <title>
-    {% if page.title == "Home" %}
-      {{ site.title }}
-    {% else %}
-      {{ page.title }} &middot; {{ site.title }}
-    {% endif %}
-  </title>
+  {% seo %}
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
@@ -39,6 +10,14 @@
 
   <!-- Favicon -->
   <link rel="mask-icon" href="{{ "/assets/favicon.svg" | relative_url }}" color="#423d3d">
-  <link rel="icon" type="image/png" href="{{ "/assets/favicon.ico" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="128x128" href="{{ "/assets/favicon.ico" | relative_url }}">
   <link rel="apple-touch-icon" sizes="160x160" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
+
+  <!-- RSS -->
+  {% feed_meta %}
+
+  <!-- Google Analytics-->
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include analytics.html %}
+  {% endif %}
 </head>
