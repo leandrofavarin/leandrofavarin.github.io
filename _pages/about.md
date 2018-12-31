@@ -8,7 +8,7 @@ permalink: /about/
 
 Hi, my name is Leandro and I am the Head of Mobile Engineering at [hibooks](https://www.hibooks.com/). Previously, I led the Android team at [Blinkist](https://www.blinkist.com/).
 
-I studied Electrical Engineering at Unicamp, [one of the best](https://www.topuniversities.com/university-rankings/brics-rankings/2014/) and [most prestigious](https://www.timeshighereducation.com/world-university-rankings/2018/latin-america-university-rankings/) university in Latin America. My programming experience started back at school helping organize workshops to program robots using [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)) after classes. This led me down a path of passion for coding that continues to this day. Understanding the whole programming stack, from transistors to Assembly to Java helped me immensely and still serves me to this day.
+I studied Electrical Engineering at Unicamp, [one of the best](https://www.topuniversities.com/university-rankings/brics-rankings/2014/) and [most prestigious](https://www.timeshighereducation.com/world-university-rankings/2018/latin-america-university-rankings/) university in Latin America. My programming experience started back at school helping organize workshops to program robots using [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)) after classes. This led me down a path of passion for coding that continues to this day. Understanding the whole software stack, from transistors to Assembly to Java helps me immensely.
 
 At the moment, I am absorbing anything I can around [Kotlin](https://kotlinlang.org/). It’s the nicest programming language I had the pleasure to get to know.
 
