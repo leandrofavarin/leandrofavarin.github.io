@@ -9,6 +9,7 @@ In 2018 I read the following books:
 * [_Zero to One_](https://www.goodreads.com/book/show/18050143), by Peter Thiel & Blake Masters
 * [_Homo Deus_](https://www.goodreads.com/book/show/31138556), by Yuval Noah Harari
 * [_The Power of Now_](https://www.goodreads.com/book/show/6708), by Eckhart Tolle
+* [_Option B_](https://www.goodreads.com/book/show/32938155), by Sheryl Sandberg
 * [_Getting Real_](https://www.goodreads.com/book/show/447648), by 37 Signals
 * [_The Courage to be Disliked_](https://www.goodreads.com/book/show/36622739), by Ichiro Kishimi &  Fumitake Koga
 * [_The Manager's Path_](https://www.goodreads.com/book/show/33369254), by Camille Fournier
