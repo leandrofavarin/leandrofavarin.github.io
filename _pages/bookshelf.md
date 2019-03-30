@@ -4,7 +4,21 @@ title: "Bookshelf"
 permalink: /bookshelf/
 ---
 
-In 2018 I read the following books:
+I recently discovered the benefits of keeping record of which books I've read.
+
+## Currently reading
+
+* [_Creativity, Inc._](https://www.goodreads.com/book/show/18077903), by Ed Catmull & Amy Wallace
+
+## 2019 (so far)
+
+* [_Building Microservices_](https://www.goodreads.com/book/show/22512931), by Sam Newman
+* [_Atomic Habits_](https://www.goodreads.com/book/show/40121378), by James Clear
+* [_The Black Swan_](https://www.goodreads.com/book/show/242472), by Nassim Nicholas Taleb
+* [_A Fearless Heart_](https://www.goodreads.com/book/show/22571627), by Thupten Jinpa
+* [_Anything You Want_](https://www.goodreads.com/book/show/11878168), by Derek Sivers
+
+## 2018
 
 * [_Zero to One_](https://www.goodreads.com/book/show/18050143), by Peter Thiel & Blake Masters
 * [_Homo Deus_](https://www.goodreads.com/book/show/31138556), by Yuval Noah Harari
