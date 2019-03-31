@@ -8,10 +8,11 @@ I recently discovered the benefits of keeping record of which books I've read.
 
 ## Currently reading
 
-* [_Creativity, Inc._](https://www.goodreads.com/book/show/18077903), by Ed Catmull & Amy Wallace
+* [_Designing Your Life_](https://www.goodreads.com/book/show/26046333), by Bill Burnett & Dave Evans
 
 ## 2019 (so far)
 
+* [_Creativity, Inc._](https://www.goodreads.com/book/show/18077903), by Ed Catmull & Amy Wallace
 * [_Building Microservices_](https://www.goodreads.com/book/show/22512931), by Sam Newman
 * [_Atomic Habits_](https://www.goodreads.com/book/show/40121378), by James Clear
 * [_The Black Swan_](https://www.goodreads.com/book/show/242472), by Nassim Nicholas Taleb
