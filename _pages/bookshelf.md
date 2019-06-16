@@ -13,6 +13,7 @@ I recently discovered the benefits of keeping record of which books I've read.
 
 ## 2019 (so far)
 
+* [_The Minimalist Vegan_](https://www.goodreads.com/book/show/37684597), by Michael Ofei,  Masa Ofei
 * [_Designing Your Life_](https://www.goodreads.com/book/show/26046333), by Bill Burnett & Dave Evans
 * [_Creativity, Inc._](https://www.goodreads.com/book/show/18077903), by Ed Catmull & Amy Wallace
 * [_Building Microservices_](https://www.goodreads.com/book/show/22512931), by Sam Newman
