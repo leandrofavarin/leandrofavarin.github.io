@@ -10,6 +10,7 @@ I recently discovered the benefits of keeping record of which books I've read.
 
 * [_The Art of Happiness_](https://www.goodreads.com/book/show/38210), by Dalai Lama XIV, Howard C. Cutler
 * [_Hackers & Painters_](https://www.goodreads.com/book/show/41793), by Paul Graham
+* [_The Manager's Path_](https://www.goodreads.com/book/show/33369254), by Camille Fournier
 
 ## 2019 (so far)
 
