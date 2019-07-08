@@ -9,11 +9,11 @@ I recently discovered the benefits of keeping record of which books I've read.
 ## Currently reading
 
 * [_The Art of Happiness_](https://www.goodreads.com/book/show/38210), by Dalai Lama XIV, Howard C. Cutler
-* [_Hackers & Painters_](https://www.goodreads.com/book/show/41793), by Paul Graham
 * [_The Manager's Path_](https://www.goodreads.com/book/show/33369254), by Camille Fournier
 
 ## 2019 (so far)
 
+* [_Hackers & Painters_](https://www.goodreads.com/book/show/41793), by Paul Graham
 * [_The Minimalist Vegan_](https://www.goodreads.com/book/show/37684597), by Michael Ofei,  Masa Ofei
 * [_Designing Your Life_](https://www.goodreads.com/book/show/26046333), by Bill Burnett & Dave Evans
 * [_Creativity, Inc._](https://www.goodreads.com/book/show/18077903), by Ed Catmull & Amy Wallace
