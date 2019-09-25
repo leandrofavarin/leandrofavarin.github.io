@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQLDelight’s powerful codegen
+title: Drive your UI with SQLDelight’s views
 date: 2019-09-22 10:30:00
 tags: [sqldelight, kotlin]
 ---
