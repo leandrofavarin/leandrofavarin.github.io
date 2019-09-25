@@ -1,13 +1,15 @@
 ---
 layout: post
-title: SQLDelight's powerful codegen
+title: SQLDelight’s powerful codegen
 date: 2019-09-22 10:30:00
 tags: [sqldelight, kotlin]
 ---
 
-Suppose you're writing a database-driven application using [SQLDelight](https://github.com/cashapp/sqldelight), and you need to present the same type of data in slightly different ways. It could be that they differ on how they're ordered, or just a subset of them.
+Users demand more from apps every year and 2019 feels as though this pressure has never been so high. Among many ways we can improve the user experience as developers, driving the interface from a local database is an easy way to achieve robustness and flexibility. This is especially the case with database tools that can broadcast changes in the data set to interested parties.
 
-SQLDelight automatically generates model objects for every query that you write. In many cases the types it generates are either from a single column (`SELECT id FROM Foo`) or from the star projection (`SELECT * FROM Foo`). The former being simple Kotlin String/Long/Int types, and the latter the type SQLDelight generates from your table definition. What happens then if you select a subset of the properties declared on your table?
+Suppose you’re writing a database-driven application using [SQLDelight](https://github.com/cashapp/sqldelight), and you need to present the same type of data in slightly different ways. It could be that they differ on how they’re ordered, or just a subset of them.
+
+SQLDelight automatically generates model objects for every query that you write. In many cases, the types it generates are either from a single column (`SELECT id FROM Foo`) or from the star projection (`SELECT * FROM Foo`). The former being simple Kotlin String/Long/Int types, and the latter the type SQLDelight generates from your table definition. What happens, then, if you select a subset of the properties declared on your table?
 
 In this case SQLDelight will create a new type for every query, with its name being the named query:
 
@@ -31,9 +33,9 @@ data class BandsOrderedByName(id: String, name: String)
 data class BandsOrderedByAge(id: String, name: String)
 ```
 
-If you wanted to transform them *later on* you would have to write two functions of types `(BandsOrderedByName) -> X` and `(BandsOrderedByAge) -> X`, even though the underlying composition is the same: two `String`s.
+If you wanted to transform them *later on*, you would have to write two functions of types `(BandsOrderedByName) -> X` and `(BandsOrderedByAge) -> X`, even though the underlying composition is the same: two `String`s.
 
-While this is a simple exercise, on real-life examples projections tend to be more complex, usually with [join clauses](https://www.sqlite.org/syntax/join-clause.html) and many properties being selected. For example:
+While this is a simple exercise, in real-life examples projections tend to be more complex, usually with [join clauses](https://www.sqlite.org/syntax/join-clause.html) and many properties selected. For example:
 
 ```sql
 SELECT
@@ -96,7 +98,7 @@ object BandItemCallback : ItemCallback<BandWithAlbum>() {
 }
 ```
 
-Going back to the queries with different sorting, one could use an enum class to model the sort options and use Kotlin's [`when` expression](https://kotlinlang.org/docs/reference/control-flow.html#when-expression) to write:
+Going back to the queries with different sorting, one could use an enum class to model the sort options and use Kotlin’s [`when` expression](https://kotlinlang.org/docs/reference/control-flow.html#when-expression) to write:
 
 ```kotlin
 enum class Sort { NAME, AGE }
@@ -108,3 +110,9 @@ fun bandsSorted(by: Sort): Flow<List<BandWithAlbum>> = when (by) {
 ```
 
 and delegate to SQL algorithms that would be [less efficient](https://speakerdeck.com/jakewharton/the-resurgence-of-sql-droidcon-nyc-2017?slide=123) to run if they were executed programmatically.
+
+Building views for the types you want and then querying those views for the data you need is an easy way to attain responsiveness and flexibility with very little code needed. It’s clear that user demands will only get more intense as technology develops. It’s therefore crucial to stay on top of these simple ways to improve the experience without breaking our backs (or keyboards).
+
+---
+
+*Many thanks to [Jake Wharton](https://twitter.com/JakeWharton) and [Alec Strong](https://twitter.com/Strongolopolis) for proofreading this article!*
