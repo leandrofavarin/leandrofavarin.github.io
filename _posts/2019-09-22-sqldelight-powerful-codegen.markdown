@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Drive your UI with SQLDelight’s views
+description: "SQLDelight’s views can help you create flexible user interfaces with minimal effort."
 date: 2019-09-22 10:30:00
 tags: [sqldelight, kotlin]
 ---
