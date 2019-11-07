@@ -9,7 +9,7 @@ I recently discovered the benefits of keeping record of which books I've read.
 ## Currently reading
 
 * [_The Art of Happiness_](https://www.goodreads.com/book/show/38210), by Dalai Lama XIV, Howard C. Cutler
-* [_The Manager's Path_](https://www.goodreads.com/book/show/33369254), by Camille Fournier
+* [_Digital Minimalism: Choosing a Focused Life in a Noisy World_](https://www.goodreads.com/book/show/40672036), by Cal Newport
 
 ## 2019 (so far)
 
