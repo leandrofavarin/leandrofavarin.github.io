@@ -9,10 +9,10 @@ I recently discovered the benefits of keeping record of which books I've read.
 ## Currently reading
 
 * [_The Art of Happiness_](https://www.goodreads.com/book/show/38210), by Dalai Lama XIV, Howard C. Cutler
-* [_Digital Minimalism: Choosing a Focused Life in a Noisy World_](https://www.goodreads.com/book/show/40672036), by Cal Newport
 
 ## 2019 (so far)
 
+* [_Digital Minimalism: Choosing a Focused Life in a Noisy World_](https://www.goodreads.com/book/show/40672036), by Cal Newport
 * [_Hackers & Painters_](https://www.goodreads.com/book/show/41793), by Paul Graham
 * [_The Minimalist Vegan_](https://www.goodreads.com/book/show/37684597), by Michael Ofei,  Masa Ofei
 * [_Designing Your Life_](https://www.goodreads.com/book/show/26046333), by Bill Burnett & Dave Evans
