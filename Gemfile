@@ -5,4 +5,3 @@ gemspec
 
 gem 'jekyll-feed'
 gem 'jekyll-seo-tag'
-gem 'jemoji'

@@ -32,7 +32,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
-  - jemoji
 
 # Permalinks
 permalink: /:title
