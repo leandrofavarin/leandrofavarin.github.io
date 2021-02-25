@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    tale (0.1.2)
-      jekyll (~> 3.6.3)
+    tale (0.2.1)
+      jekyll (~> 4.0)
       jekyll-paginate (~> 1.1)
 
 GEM
