@@ -16,4 +16,4 @@ I grew up in São Paulo and I currently live in Berlin. Berlin’s [message](htt
 
 My newest hobby is cooking plant-based meals. Maybe that’s also Berlin’s influence on me.
 
-Let’s chat. You can reach me via [email](mailto:lfavarin+site@gmail.com?subject=Hi), find me on [GitHub](https://github.com/leandrofavarin/), [Twitter](https://twitter.com/leandrofavarin/), and [LinkedIn](https://www.linkedin.com/in/leandrofavarin/).
+Let’s chat. You can reach me via [email](mailto:lfavarin+site@gmail.com?subject=Hi), find me on [GitHub](https://github.com/leandrofavarin/){:rel='me'}, [Twitter](https://twitter.com/leandrofavarin/){:rel='me'}, and [LinkedIn](https://www.linkedin.com/in/leandrofavarin/){:rel='me'}.
