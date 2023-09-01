@@ -116,4 +116,4 @@ Building views for the types you want and then querying those views for the data
 
 ---
 
-*Many thanks to [Jake Wharton](https://twitter.com/JakeWharton) and [Alec Strong](https://twitter.com/Strongolopolis) for proofreading this article!*
+*Many thanks to [Jake Wharton](https://jakewharton.com) and [Alec Strong](https://www.alecstrong.com) for proofreading this article!*
