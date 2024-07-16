@@ -12,7 +12,7 @@ I studied Electrical Engineering at Unicamp, [one of the best](https://www.topun
 
 At the moment, I am absorbing anything I can around [Kotlin](https://kotlinlang.org/). It’s the nicest programming language I had the pleasure to get to know.
 
-I grew up in São Paulo and I currently live in Berlin. Berlin’s [message](http://www.paulgraham.com/cities.html) for me is: be creative. Build. I love building things. e.g. I am currently writing an app (iOS, Android and the backend) to manage my favorite quotes — in Kotlin. I also love to learn. This is why I worked for companies in the education industry and why I read several non-fiction books in order to grow and expand my mind (see [bookshelf](/bookshelf)).
+I grew up in São Paulo and I currently live in Berlin. Berlin’s [message](http://www.paulgraham.com/cities.html) for me is: be creative. Build. I love building things. e.g. I am currently writing an app (iOS, Android and the backend) to manage my favorite quotes — in Kotlin. I also love to learn. This is why I worked for companies in the education industry.
 
 My newest hobby is cooking plant-based meals. Maybe that’s also Berlin’s influence on me.
 
