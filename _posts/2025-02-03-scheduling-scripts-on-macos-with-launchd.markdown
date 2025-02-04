@@ -78,4 +78,4 @@ The man pages of [launchctl](https://ss64.com/mac/launchctl.html) and [launchd.p
 
 By setting an automated, in-background process that constantly replicates my photos to a secure offsite storage, I've removed Apple as a single point of failure in the event of unexpected account closure.
 
-I firmly believe that the security and preservation of our cherished digital heritage should be a top priority, rather than relying on a free service to magically exist and serve us.
+I believe that the security and preservation of our digital memories should be a top priority and were we must actively more actions than to rely on a free service to magically exist and serve us.
