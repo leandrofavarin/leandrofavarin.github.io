@@ -16,6 +16,9 @@
 
 <link href=https://mastodon.social/@leandrofavarin rel=me>
 
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+
 {{ $title := print .Site.Title " | " .Title }}
 {{ if .IsHome }}
 {{ $title = .Site.Title }}
