@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="flex">
+      <div>
+        <a class="brand" href="/">
+          {{ .Site.Title }}
+        </a>
+      </div>
+      <div class="flex">
+        {{ range .Site.Menus.main }}
+        {{ if eq .Identifier "rss"}}
+          <a class="nav-link" href="{{ .URL }}" type="application/rss+xml">
+            {{ $text := print .Name | safeHTML }}
+            {{ $text }}
+          </a>
+        {{ else }}
+          <a class="nav-link" href="{{ .URL }}">
+            {{ $text := print .Name | safeHTML }}
+            {{ $text }}
+          </a>
+        {{ end }}  
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</nav>

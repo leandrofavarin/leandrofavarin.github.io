@@ -1,0 +1,30 @@
+baseURL = "https://leandrofavarin.com"
+title = "Leandro Favarin"
+theme = "creme"
+
+[Author]
+  name = "Leandro Favarin"
+
+[permalinks]
+  articles = "/:title"
+
+[outputFormats]
+[outputFormats.RSS]
+baseName = "feed"
+
+[[menus.main]]
+name = 'Articles'
+pageRef = '/articles'
+weight = 20
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about'
+weight = 30
+
+[[menus.main]]
+name = 'RSS'
+url = '/feed.xml'
+identifier = 'rss'
+target = '_blank'
+weight = 40

@@ -1,17 +1,12 @@
-test/dest
-*.gem
-pkg/
-*.swp
-*~
-_site
-.bundle/
+### Hugo ###
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Temporary lock file while building
+/.hugo_build.lock
+
+# macOS
 .DS_Store
-bbin/
-gh-pages/
-vendor/
-site/_site/
-coverage
-.ruby-version
-.sass-cache
-tmp/stackprof-*
-.jekyll-metadata

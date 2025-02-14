@@ -1,0 +1,22 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+<!-- {{ .Content }} -->
+<div class="posts">
+{{ range .Pages.ByPublishDate.Reverse }}
+<div class="post">
+    <a class="title" href="{{ .RelPermalink }}">
+      <div class="post-row">
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format "Jan 2, 2006"  }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        <div>
+          <h3>{{ .Title }}</h3>
+          <p class="post-row__summary">{{ .Summary }}</p>
+        </div>
+        <!-- {{ partial "metadata.html" . }} -->
+      </div>
+    </a>
+</p>
+{{ end }}
+</div>
+{{ end }}

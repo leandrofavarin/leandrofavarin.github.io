@@ -1,0 +1,47 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  {{ if .Date }}
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  {{ end }}
+
+
+  {{ if .Params.homepage }}
+    at 
+    <a href="{{ .Params.homepage }}">
+      {{ if .Params.event }}
+        {{ .Params.event }}
+        {{ if .Params.location }}
+          ({{ .Params.location }})
+        {{ end }}
+      {{ end }}
+    </a>
+  {{ end }}
+
+  <div style="margin-left: .5rem; 
+              margin-top: .5rem; 
+              font-size: .9rem; 
+              color: var(--light-font-color);">
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </div>
+  
+  <div class="article-post">
+    {{ .Content }}
+
+    <div class="presentation">
+      {{ if .Params.youtube }}
+      <section class="youtube">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ .Params.youtube }}" frameborder="0" allowfullscreen></iframe>
+      </section>
+      {{ end }}
+
+      {{ if .Params.speakerdeck }}
+      <section class="speakerdeck">
+        <script async class="speakerdeck-embed" data-id="{{ .Params.speakerdeck }}" data-ratio="1.77777777777778" src="https://speakerdeck.com/assets/embed.js"></script>
+      </section>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
