@@ -19,7 +19,7 @@
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
 
-{{ $title := print .Site.Title " | " .Title }}
+{{ $title := print .Title " | " .Site.Title }}
 {{ if .IsHome }}
 {{ $title = .Site.Title }}
 {{ end }}
