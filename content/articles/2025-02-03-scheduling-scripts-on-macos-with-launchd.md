@@ -64,18 +64,24 @@ With `local.PhotoSync.plist` at `~/Library/LaunchAgents/` being:
 </plist>
 ```
 
-to run at every midnight, as specified with `StartCalendarInterval`. With them in place, the commands to register[^register] & unregister the agent on `launchd` are:
+to run at every midnight, as specified with `StartCalendarInterval`. With them in place, the commands to register & unregister the agent on `launchd` are:
 
-[^register]: the `-k` argument kills any running instance before restarting the service.
 
 ```shell
-launchctl load -k <your-plist>
+launchctl bootstrap gui/$(id -u)/com.example.myjob
 
-launchctl unload <your-plist>
+launchctl bootout gui/$(id -u)/com.example.myjob
+```
+
+And if you'd like to trigger a one-off execution:
+```shell
+launchctl kickstart -p gui/$(id -u)/com.example.myjob
 ```
 
 The man pages of [launchctl](https://ss64.com/mac/launchctl.html) and [launchd.plist](https://manpagez.com/man/5/launchd.plist/) are fairly easy to understand and cover a lot of details not mentioned in this article.
 
 By setting an automated, in-background process that constantly replicates my photos to a secure offsite storage, I've removed Apple as a single point of failure in the event of unexpected account closure.
 
-I believe that the security and preservation of our digital memories should be a top priority and were we must actively more actions than to rely on a free service to magically exist and serve us.
+I believe preserving and securing our digital memories must be a top priority—one that requires active effort rather than reliance on free services that may not last.
+
+**Sept 22, 2026:** Article edited for clarity, and to use newer syntax (macOS Golden Gate 27).
